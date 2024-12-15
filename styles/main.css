@@ -1,2 +1,47 @@
 @import "./bulma.css";
 
+body {
+  background-image: url("../media/bg/fondoBIC3.png");
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: center;
+  height: 100vh;
+}
+
+.baba-hero {
+/*   width: 100%;
+  align-items: center;
+  padding: 15%;
+  position: relative; */
+  display: none;
+}
+
+.baba-title {
+/*   position: absolute;
+  width: 50%;
+  top: -20%;
+  object-fit: contain;
+  height: 45vh; */
+  display: none;
+}
+
+.baba-container {
+/*     padding-top: 10%;
+    padding-inline: 22%; */
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  transform: scale(1);
+}
