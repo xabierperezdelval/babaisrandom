@@ -13,21 +13,95 @@
       href=" https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css "
       rel="stylesheet"
     />
+    <script src="scripts/code-logic.js"></script>
   </head>
   <body>
-    <section class="hero baba-hero clearfix">
-      <img class="image baba-title" src="./media/gif/bic3.gif" />
+    <!-- HEADER -->
+
+    <section class="hero baba-hero-wrapper clearfix">
+      <img
+        class="image baba-hero-image"
+        src="./media/gif/titulo_babaiscool3.gif"
+      />
     </section>
-    <div class="section baba-container columns is-flex is-vcentered">
-      <div class="container notification is-primary">
-        This container is <strong>centered</strong> on desktop and larger
-        viewports.
-      </div>
+
+    <!-- TITLE -->
+    <div id="baba-form" class="baba-form">
+      <section class="section baba-padded-section">
+        <div class="container has-text-centered">
+          <h1 class="title baba-title">
+            What kind of level do you want to play?
+          </h1>
+        </div>
+      </section>
+
+      <!-- CHECKBOXES -->
+
+      <section class="section baba-padded-section">
+        <div class="container has-text-centered baba-checkboxes">
+          <div class="columns is-gapless">
+            <div class="column is-3">
+              <dd id="baba-check-wrap">
+                <input type="checkbox" value="0" id="baba-check-1" />
+                <label for="baba-check-1"
+                  >Baba is <span class="baba-text-chill">CHILL</span></label
+                >
+              </dd>
+            </div>
+            <div class="column is-3">
+              <dd id="baba-check-wrap">
+                <input type="checkbox" value="1" id="baba-check-2" />
+                <label for="baba-check-2"
+                  >Baba is <span class="baba-text-eureka">EUREKA</span></label
+                >
+              </dd>
+            </div>
+            <div class="column is-3">
+              <dd id="baba-check-wrap">
+                <input type="checkbox" value="2" id="baba-check-3" />
+                <label for="baba-check-3"
+                  >Baba is <span class="baba-text-boom">BOOM</span></label
+                >
+              </dd>
+            </div>
+            <div class="column is-3">
+              <dd id="baba-check-wrap">
+                <input type="checkbox" value="3" id="baba-check-4" />
+                <label for="baba-check-4"
+                  >Baba is <span class="baba-text-comfy">COMFY</span></label
+                >
+              </dd>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BUTTON -->
+      <section class="section">
+        <div class="container has-text-centered baba-button-wrapper">
+          <button
+            class="button is-large baba-button"
+            onclick="getRandomLevel(event)"
+          >
+            Generate code!
+          </button>
+        </div>
+      </section>
     </div>
-    <section class="section">
-      <div class="container">
-        <div class="is-flex">sdfsdfsdsdfsdfsdf</div>
-      </div>
-    </section>
+    <div id ="baba-get-level" class="baba-get-level">
+      <section class="section baba-padded-section">
+        <div class="container has-text-centered">
+          <h1 class="title baba-title">
+            Here's your level, enjoy!
+          </h1>
+        </div>
+      </section>
+      <section class="section baba-padded-section">
+        <div class="container has-text-centered">
+          <h2 id="level-code" class="title baba-title">
+          </h2>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
