@@ -1,10 +1,14 @@
 @import "./bulma.css";
 
+/* AT-RULES */
+
 @font-face {
   font-family: "GochiHand-Regular";
   src: local("GochiHand-Regular"),
     url("../media/fonts/GochiHand-Regular.ttf") format("truetype");
 }
+
+/* GLOBAL RULES */
 
 html > * {
   font-family: "GochiHand-Regular";
@@ -17,7 +21,10 @@ body {
   background-position: left, right, center;
   min-height: 100vh;
   background-size: clamp(60px, 10vw, 500px), clamp(60px, 10vw, 500px), cover;
+  overflow: hidden;
 }
+
+/* CLEARFIX HACK RULES */
 
 .clearfix:before,
 .clearfix:after {
@@ -34,21 +41,62 @@ body {
   transform: scale(1);
 }
 
-#baba-get-level {
-  display: none;
-}
-
-.baba-checkboxes > * {
-  gap: 10px;
-}
+/* BULMA MODIFIERS */
 
 input[type="checkbox"] {
   transform: scale(2);
 }
 
-.baba-checkbox {
-  color: red;
+label {
+  padding-left: 1em;
+  color: #e5dcde;
+  font-size: 1.5em;
 }
+
+.control.has-icons-left .input:hover ~ .icon,
+.control.has-icons-left .select:hover ~ .icon,
+.control.has-icons-right .input:hover ~ .icon,
+.control.has-icons-right .select:hover ~ .icon {
+  color: #f19cb5;
+}
+.control.has-icons-left .input:focus ~ .icon,
+.control.has-icons-left .select:focus ~ .icon,
+.control.has-icons-right .input:focus ~ .icon,
+.control.has-icons-right .select:focus ~ .icon {
+  color: #d73969;
+}
+
+/* VIEW INITIAL STATES */
+
+#baba-get-level {
+  display: none;
+}
+
+.baba-get-level-bg-wrapper {
+  position: relative;
+}
+
+.baba-get-level-bg-img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: 10%;
+  height: 100vh;
+  background-image: url(../media/images/iconos_fondo.png);
+  background-repeat: repeat-y;
+  background-size: 81%;
+  background-position-y: top;
+  opacity: 0.35;
+}
+
+/* SECTIONS */
+
+.baba-padded-section {
+  --bulma-section-padding: 3rem clamp(1.5rem, 10vw, 8.5rem);
+}
+
+/* HERO */
+
 .baba-hero-wrapper {
   width: 100%;
   align-items: center;
@@ -62,15 +110,13 @@ input[type="checkbox"] {
   height: auto;
 }
 
+/* TITLE */
+
 .baba-title {
   color: #e5dcde;
 }
 
-label {
-  padding-left: 1em;
-  color: #e5dcde;
-  font-size: 1.5em;
-}
+/* CHECKBOXES */
 
 #baba-check-1 {
   accent-color: #5d833a;
@@ -87,6 +133,8 @@ label {
 #baba-check-4 {
   accent-color: #9183d8;
 }
+
+/* LABELS */
 
 .baba-text-chill {
   color: #5d833a;
@@ -108,17 +156,112 @@ label {
   font-weight: bold;
 }
 
+/* BUTTONS */
+
 .baba-button {
-  background-color:#d73969;
+  background-color: #d73969;
   color: white;
   width: calc(var(--bulma-size-large) * 12);
   height: calc(var(--bulma-size-large) * 4);
 }
 
 .baba-button:hover {
-  background-color:#972648;
+  background-color: #972648;
 }
 
-.baba-padded-section {
-  --bulma-section-padding: 3rem clamp(1.5rem, 10vw, 8.5rem);
+.baba-button-reroll {
+  background-color: #d73969;
+  color: white;
+}
+
+.baba-button-restart {
+  background-color: #e991cb;
+}
+
+/* INPUTS */
+
+.baba-input {
+  background-color: transparent;
+  color: white;
+}
+
+.baba-input {
+  cursor: pointer;
+}
+
+#baba-level-code:hover {
+  color: #f19cb5;
+  border-color: #f19cb5;
+}
+
+#baba-level-code:focus {
+  color: #d73969;
+  border-color: #d73969;
+}
+
+/* SNACKBAR */
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #d73969;
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }

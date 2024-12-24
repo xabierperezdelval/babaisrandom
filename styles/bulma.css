@@ -6383,16 +6383,7 @@ button.tag:active,
   position: relative;
   text-align: inherit;
 }
-.control.has-icons-left .input:hover ~ .icon,
-.control.has-icons-left .select:hover ~ .icon, .control.has-icons-right .input:hover ~ .icon,
-.control.has-icons-right .select:hover ~ .icon {
-  color: var(--bulma-input-icon-hover-color);
-}
-.control.has-icons-left .input:focus ~ .icon,
-.control.has-icons-left .select:focus ~ .icon, .control.has-icons-right .input:focus ~ .icon,
-.control.has-icons-right .select:focus ~ .icon {
-  color: var(--bulma-input-icon-focus-color);
-}
+
 .control.has-icons-left .input.is-small ~ .icon,
 .control.has-icons-left .select.is-small ~ .icon, .control.has-icons-right .input.is-small ~ .icon,
 .control.has-icons-right .select.is-small ~ .icon {

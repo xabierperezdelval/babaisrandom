@@ -1,3 +1,15 @@
+document.addEventListener("DOMContentLoaded", () => {
+  (document.querySelectorAll(".notification .delete") || []).forEach(
+    ($delete) => {
+      const $notification = $delete.parentNode;
+
+      $delete.addEventListener("click", () => {
+        $notification.parentNode.removeChild($notification);
+      });
+    }
+  );
+});
+
 function getRandomLevel(e) {
   let combinedLevels = [];
   let randomLevel;
@@ -5,10 +17,9 @@ function getRandomLevel(e) {
   if (selectedValues.length > 0) {
     for (let index = 0; index < selectedValues.length; index++) {
       const CURRENT_VALUE = selectedValues[index].value;
-      if (CURRENT_VALUE == index)
-        combinedLevels = combinedLevels.concat(
-          Object.values(BABA_LEVELS)[CURRENT_VALUE]
-        );
+      combinedLevels = combinedLevels.concat(
+        Object.values(BABA_LEVELS)[CURRENT_VALUE]
+      );
     }
     randomLevel =
       combinedLevels[Math.floor(Math.random() * combinedLevels.length)];
@@ -17,12 +28,48 @@ function getRandomLevel(e) {
 }
 
 function switchView(randomLevel) {
-  var hideFormDiv = document.getElementById("baba-form");
-  var showLevelDiv = document.getElementById("baba-get-level");
-  var levelCodeContainer = document.getElementById("level-code");
-  hideFormDiv.style.display = "none";
-  showLevelDiv.style.display = "block";
-  levelCodeContainer.innerHTML = randomLevel;
+  let formDiv = document.getElementById("baba-form");
+  let levelCodeDiv = document.getElementById("baba-get-level");
+  let levelCodeContainer = document.getElementById("baba-level-code");
+  formDiv.style.display = "none";
+  levelCodeDiv.style.display = "block";
+  levelCodeContainer.value = randomLevel;
+}
+
+function resetView() {
+  let formDiv = document.getElementById("baba-form");
+  let levelCodeDiv = document.getElementById("baba-get-level");
+  let levelCodeContainer = document.getElementById("baba-level-code");
+  let checkboxes = document.querySelectorAll("input");
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].type == "checkbox") {
+      checkboxes[i].checked = false;
+    }
+  }
+  formDiv.style.display = "block";
+  levelCodeDiv.style.display = "none";
+  levelCodeContainer.value = "";
+}
+
+function copyText(e) {
+  var copyText = document.getElementById("baba-level-code");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+
+  navigator.clipboard.writeText(copyText.value);
+
+  showSnackbar();
+}
+
+function showSnackbar() {
+  var snackbarElement = document.getElementById("snackbar");
+
+  snackbarElement.className = "show";
+
+  setTimeout(function () {
+    snackbarElement.className = snackbarElement.className.replace("show", "");
+  }, 3000);
 }
 
 const BABA_LEVELS = {

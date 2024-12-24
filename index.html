@@ -25,8 +25,11 @@
       />
     </section>
 
-    <!-- TITLE -->
+    <!-- SELECTION VIEW -->
+
     <div id="baba-form" class="baba-form">
+      <!-- TITLE -->
+
       <section class="section baba-padded-section">
         <div class="container has-text-centered">
           <h1 class="title baba-title">
@@ -39,8 +42,8 @@
 
       <section class="section baba-padded-section">
         <div class="container has-text-centered baba-checkboxes">
-          <div class="columns is-gapless">
-            <div class="column is-3">
+          <div class="columns is-1 is-multiline">
+            <div class="column">
               <dd id="baba-check-wrap">
                 <input type="checkbox" value="0" id="baba-check-1" />
                 <label for="baba-check-1"
@@ -48,7 +51,7 @@
                 >
               </dd>
             </div>
-            <div class="column is-3">
+            <div class="column">
               <dd id="baba-check-wrap">
                 <input type="checkbox" value="1" id="baba-check-2" />
                 <label for="baba-check-2"
@@ -56,7 +59,7 @@
                 >
               </dd>
             </div>
-            <div class="column is-3">
+            <div class="column">
               <dd id="baba-check-wrap">
                 <input type="checkbox" value="2" id="baba-check-3" />
                 <label for="baba-check-3"
@@ -64,7 +67,7 @@
                 >
               </dd>
             </div>
-            <div class="column is-3">
+            <div class="column">
               <dd id="baba-check-wrap">
                 <input type="checkbox" value="3" id="baba-check-4" />
                 <label for="baba-check-4"
@@ -76,7 +79,8 @@
         </div>
       </section>
 
-      <!-- BUTTON -->
+      <!-- GENERATE BUTTON -->
+
       <section class="section">
         <div class="container has-text-centered baba-button-wrapper">
           <button
@@ -88,20 +92,64 @@
         </div>
       </section>
     </div>
-    <div id ="baba-get-level" class="baba-get-level">
+
+    <!-- GET CODE VIEW -->
+
+    <div id="baba-get-level" class="baba-get-level">
+      <div class="baba-get-level-bg-wrapper">
+        <div class="baba-get-level-bg-img"></div>
+      </div>
+      <!-- TITLE -->
+
       <section class="section baba-padded-section">
         <div class="container has-text-centered">
-          <h1 class="title baba-title">
-            Here's your level, enjoy!
-          </h1>
+          <h1 class="title baba-title">Here's your level, enjoy!</h1>
         </div>
       </section>
+
+      <!-- INPUT -->
+
       <section class="section baba-padded-section">
-        <div class="container has-text-centered">
-          <h2 id="level-code" class="title baba-title">
-          </h2>
+        <div class="column is-5 m-auto">
+          <div
+            onclick="copyText(event)"
+            class="control has-icons-right baba-input-wrapper"
+          >
+            <input
+              id="baba-level-code"
+              readonly
+              class="baba-input input is-large"
+              type="text"
+            />
+            <span class="baba-input-icon-wrapper icon is-right">
+              <i class="baba-input-icon fas fa-copy"></i>
+            </span>
+          </div>
         </div>
       </section>
+
+      <!-- BUTTONS -->
+
+      <section class="section has-text-centered">
+        <div class="buttons is-centered baba-button-wrapper">
+          <button
+            class="baba-button-reroll button is-large"
+            onclick="getRandomLevel(event)"
+          >
+            Reroll!
+          </button>
+          <button
+            class="baba-button-restart button is-large"
+            onclick="resetView(event)"
+          >
+            Restart!
+          </button>
+        </div>
+      </section>
+
+      <!-- SNACKBAR -->
+
+      <div id="snackbar">Level code copied!</div>
     </div>
   </body>
 </html>
