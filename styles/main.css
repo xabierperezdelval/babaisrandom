@@ -92,7 +92,7 @@ label {
 /* SECTIONS */
 
 .baba-padded-section {
-  --bulma-section-padding: 3rem clamp(1.5rem, 10vw, 8.5rem);
+  padding-inline: 6rem;
 }
 
 /* HERO */
