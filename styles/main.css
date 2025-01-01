@@ -19,9 +19,10 @@ body {
     #150006;
   background-repeat: repeat-y;
   background-position: left, right, center;
-  min-height: 100vh;
+  margin: 0;
+  height: 100vh;
   background-size: clamp(60px, 10vw, 500px), clamp(60px, 10vw, 500px), cover;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* CLEARFIX HACK RULES */
@@ -79,13 +80,12 @@ label {
 .baba-get-level-bg-img {
   position: absolute;
   width: 100%;
-  height: auto;
-  left: 10%;
   height: 100vh;
-  background-image: url(../media/images/iconos_fondo.png);
+  background-image: url(../media/bg/fondo_itchio3B.png);
   background-repeat: repeat-y;
   background-size: 81%;
   background-position-y: top;
+  background-position-x: center;
   opacity: 0.35;
 }
 
@@ -212,7 +212,7 @@ label {
   padding: 16px;
   position: fixed;
   z-index: 1;
-  left: 50%;
+  left: 80%;
   bottom: 30px;
 }
 
